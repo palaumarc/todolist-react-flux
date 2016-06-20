@@ -23,16 +23,10 @@ var todoContainer = React.createClass({
     this.filterStoreRemoveToken.remove();
   },
   updateTodos: function() {
-    this.setState({
-      todos: todoStore.getTodos(),
-      filter: this.state.filter
-    })
+    this.setState(Object.assign({}, this.state, {todos: todoStore.getTodos()}));
   },
   updateFilter: function() {
-    this.setState({
-      todos: this.state.todos,
-      filter: filterStore.getActiveFilter()
-    })
+    this.setState(Object.assign({}, this.state, {filter: filterStore.getActiveFilter()}));
   },
 
   getFilteredTodos: function() {
@@ -41,9 +35,9 @@ var todoContainer = React.createClass({
     switch (this.state.filter) {
 
       case SHOW_ACTIVE:
-        Object.keys(this.state.todos).filter(id => { 
-          return !this.state.todos[id].isCompleted; 
-        }).forEach( id => {
+        Object.keys(this.state.todos).filter(id =>  
+          !this.state.todos[id].isCompleted 
+        ).forEach( id => {
           filteredTodos[id] = this.state.todos[id]
         })
 
