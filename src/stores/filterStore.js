@@ -21,6 +21,7 @@ class FilterStore extends Store {
     this.activeFilter = newFilter;
   }
 
+  // Overriden method given by Flux library Store 
   __onDispatch (action) {
 
     switch(action.type) {

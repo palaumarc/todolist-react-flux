@@ -28,6 +28,7 @@ class TodoStore extends Store {
     this.todos[id].isCompleted = !this.todos[id].isCompleted; 
   }
 
+  // Overriden method given by Flux library Store
   __onDispatch (action) {
     switch(action.type) {
 
