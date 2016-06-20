@@ -1,4 +1,4 @@
-import { SET_FILTER } from '../actions/todoActions';
+import { SET_FILTER } from '../actions/filterActions';
 import { AppDispatcher } from '../dispatcher/appDispatcher';
 import { Store } from 'flux/utils';
 

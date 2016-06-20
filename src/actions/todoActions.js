@@ -3,7 +3,6 @@ import { AppDispatcher } from '../dispatcher/appDispatcher'
 export const ADD_TODO = 'ADD_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
-export const SET_FILTER = 'SET_FILTER'
 
 let nextTodoId = 0;
 
@@ -28,10 +27,3 @@ export function toggleTodo(id) {
     id
   });
 }
-
-export function setFilter(filter) {
-  AppDispatcher.dispatch({
-    type: SET_FILTER,
-    filter
-  })
-};
